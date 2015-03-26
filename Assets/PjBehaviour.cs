@@ -18,6 +18,7 @@ public class PjBehaviour : MonoBehaviour {
 	
 	// Update is called once per frame
 	void FixedUpdate () {
+
 		if (Input.GetKey (KeyCode.W) && grounded >0 ) {
 			rb.AddForce (jumpVector * 10, ForceMode2D.Impulse);
 			grounded = 0;
