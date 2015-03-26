@@ -15,7 +15,7 @@ public class ObstacleCollision : MonoBehaviour {
 
 	void OnTriggerEnter2D(Collider2D other){
 		Destroy (other.gameObject);
-		print ("Hola mundo");
+
 
 	}
 
