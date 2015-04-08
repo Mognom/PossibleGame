@@ -14,7 +14,8 @@ public class ObstacleCollision : MonoBehaviour {
 	}
 
 	void OnTriggerEnter2D(Collider2D other){
-		Destroy (other.gameObject);
+		SceneManager.instance.resetLevel ();
+		//Destroy (other.gameObject);
 
 
 	}
