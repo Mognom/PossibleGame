@@ -4,13 +4,13 @@ using System.Collections;
 public class CameraBehaviour : MonoBehaviour {
 
 	public Transform player;
-	private float cameraY = 0f;
+	private float cameraY = 1.080513f - 0.5f;
 	private float dif = 1.5f;
 	private float velocity = 0;
 
 	void start(){
 
-		cameraY = transform.position.y;
+		//cameraY = transform.position.y;
 	}
 	
 	// Update is called once per frame
