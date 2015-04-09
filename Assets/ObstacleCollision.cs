@@ -14,7 +14,9 @@ public class ObstacleCollision : MonoBehaviour {
 	}
 
 	void OnTriggerEnter2D(Collider2D other){
-		SceneManager.instance.resetLevel ();
+		other.attachedRigidbody.velocity = Vector2.zero;
+		other.GetComponent<SpriteRenderer> ().sprite = null;
+		SceneManager.instance.died ();
 		//Destroy (other.gameObject);
 
 

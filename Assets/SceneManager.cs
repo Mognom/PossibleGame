@@ -7,16 +7,29 @@ public class SceneManager : MonoBehaviour {
 	private string currentLevel;
 	// Use this for initialization
 	void Start () {
-		if (instance == null)
-			instance = this;
+		instance = this;
 		currentLevel = "scene";
 	}
 
+	//Reloads current level
 	public void resetLevel(){
 		Application.LoadLevel (currentLevel);
 	}
-	// Update is called once per frame
-	void Update () {
+
+	//On death animation and then reset
+	public IEnumerator deathTrigger(){
+		//Start death animation
+		print ("Muerte y destruccion");
+		yield return new WaitForSeconds (1.0f);
+		resetLevel ();
+	}
 	
+	void OnTriggerEnter2D(Collider2D other){
+		//Level completed
+		resetLevel ();
+	}
+
+	public void died (){
+		StartCoroutine(deathTrigger ());
 	}
 }
